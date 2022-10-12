@@ -54,6 +54,17 @@ public class JavaTesterController {
         return sum/grades.length;
     }
 
+    @GetMapping(path = "/units/{name}/grade",
+             produces= MediaType.APPLICATION_JSON_VALUE)
+    public double getGradeByUnitName(@PathVariable("name") String name) {
+        for (int i = 0; i < ucs.length; i++) {
+            if (ucs[i].equals(name)) {
+                return grades[i];
+            }
+        }
+        return -1;
+    }
+
 
 
 
