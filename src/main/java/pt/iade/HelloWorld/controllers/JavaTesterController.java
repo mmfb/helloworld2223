@@ -33,6 +33,28 @@ public class JavaTesterController {
         return (isStudent && !hasCovid);
     }
 
+    private double grades[] = {10.5, 12, 14.5};
+    private String ucs[] = {"FP","POO","BD"};
+
+    @GetMapping(path = "/grades/average",
+             produces= MediaType.APPLICATION_JSON_VALUE)
+    public double getAverage() {
+        double sum = 0;
+
+        for (double grade : grades) {
+            sum += grade;
+        }
+        /* 
+        for (int i = 0; i < grades.length; i++) {
+            double grade = grades[i];
+            sum += grade;
+        }
+         */
+        
+        return sum/grades.length;
+    }
+
+
 
 
 
