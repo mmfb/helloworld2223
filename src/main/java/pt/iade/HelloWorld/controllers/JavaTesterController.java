@@ -23,4 +23,18 @@ public class JavaTesterController {
 
         return res;
     }   
+
+
+    @GetMapping(path = "/access/{student}/{covid}",
+             produces= MediaType.APPLICATION_JSON_VALUE)
+    public boolean getGreeting(@PathVariable("student") boolean isStudent,
+                @PathVariable("covid") boolean hasCovid) {
+        
+        return (isStudent && !hasCovid);
+    }
+
+
+
+
+
 }
